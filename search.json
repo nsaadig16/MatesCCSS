@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MatesCCSS",
+    "section": "",
+    "text": "Aquesta pàgina web conté apunts de Matemàtiques Aplicades a les Ciències Socials.\nPodeu trobar exàmens resolts aquí.\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\nTema\n\n\n\nAutor\n\n\n\n\n\n\n\n\n2026-01-27\n\n\nSistemes d’equacions\n\n\nNaïm Saadi\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "contents/sistemes.html#què-és-un-sistema-dequacions",
+    "href": "contents/sistemes.html#què-és-un-sistema-dequacions",
+    "title": "Sistemes d’equacions",
+    "section": "Què és un sistema d’equacions?",
+    "text": "Què és un sistema d’equacions?\n\nUn sistema d’equacions es un conjunt d’equacions que tenen més d’una incògnita pels que hem de fer servir certs mètodes per resoldre. Aquests mètodes poden ser un dels següents:\n\nSubstitució\nIgualació\nReducció"
+  },
+  {
+    "objectID": "contents/sistemes.html#quan-es-pot-resoldre-un-sistema",
+    "href": "contents/sistemes.html#quan-es-pot-resoldre-un-sistema",
+    "title": "Sistemes d’equacions",
+    "section": "Quan es pot resoldre un sistema?",
+    "text": "Quan es pot resoldre un sistema?\n\nUn sistema d’equacions es pot resoldre (és a dir, trobar les solucions a totes les incògnites) només si tenim el mateix nombre d’equacions que d’incògnites.\n\n\nNo es poden resoldre:\n\n\n\\[\n\\begin{cases}\nx + y + z = 3\\\\\nx - y - z = -1\n\\end{cases}\n\\]\n\n\\[\n\\begin{cases}\nx + y \\quad~~~ = 3\\\\\n\\quad ~~~ y - z = 1\n\\end{cases}\n\\]\n\n\n\nSí es poden resoldre:\n\n\n\\[\n\\begin{cases}\nx + y + z = 3\\\\\nx - y - z = -1\\\\\n2x + y +3z = 6\n\\end{cases}\n\\]\n\n\\[\n\\begin{cases}\nx + y = 3\\\\\nx - y = -1\n\\end{cases}\n\\]"
+  },
+  {
+    "objectID": "contents/sistemes.html#resolució-de-sistemes-amb-tres-incògnites",
+    "href": "contents/sistemes.html#resolució-de-sistemes-amb-tres-incògnites",
+    "title": "Sistemes d’equacions",
+    "section": "Resolució de sistemes amb tres incògnites",
+    "text": "Resolució de sistemes amb tres incògnites\n\nPer a resoldre sistemes amb tres incògnites normalment farem servir el mètode de Gauss per aplicar reducció.\nEs poden fer les següents operacions sobre files:\n\nIntercanviar files (p.e. \\(\\small F_1 \\iff F_2\\))\nMultiplicar una fila per un número diferent de 0 (p.e. \\(\\small F_1 \\Rightarrow 3\\cdot F_1\\))\nSumar/restar files (p.e. \\(\\small F_1 \\Rightarrow F_1 + F_2\\))\nMultiplicar i sumar/restar files (p.e. \\(\\small F_1 \\Rightarrow 2\\cdot F_1 -4\\cdot F_2\\))"
+  },
+  {
+    "objectID": "contents/sistemes.html#resolució",
+    "href": "contents/sistemes.html#resolució",
+    "title": "Sistemes d’equacions",
+    "section": "Resolució",
+    "text": "Resolució\n\nEs farà un exemple amb el següent sistema:\n\\[\n\\begin{cases}\nx + 3y + 6z = 200\\\\\nx + 2y + 3z = 135\\\\\nx + y + z = 85\n\\end{cases}\n\\]\n\n\nÉs el sistema extret de l’exercici 1 de l’examen de juny 2022, sèrie 2 (veure problema)."
+  },
+  {
+    "objectID": "contents/sistemes.html#resolució-pas-1",
+    "href": "contents/sistemes.html#resolució-pas-1",
+    "title": "Sistemes d’equacions",
+    "section": "Resolució: Pas 1",
+    "text": "Resolució: Pas 1\n\nPrimerament, transformarem el sistema en una matriu:\n\\[\n\\left(\\begin{array}{ccc|c}\n1 & 3 & 6 & 200 \\\\\n1 & 2 & 3 & 135 \\\\\n1 & 1 & 1 & 85\n\\end{array}\\right)\n\\]\n\n\nOn sempre hem de convertir les següents posicions en zeros:\n\\[\n\\left(\\begin{array}{ccc|c}\n1 & 3 & 6 & 200 \\\\\n\\color{blue}1 & 2 & 3 & 135 \\\\\n\\color{blue}1 & \\color{blue}1 & 1 & 85\n\\end{array}\\right)\n\\]"
+  },
+  {
+    "objectID": "contents/sistemes.html#resolució-pas-2",
+    "href": "contents/sistemes.html#resolució-pas-2",
+    "title": "Sistemes d’equacions",
+    "section": "Resolució: Pas 2",
+    "text": "Resolució: Pas 2\nPodem veure que si a la fila 2 li col·loquem la resta de la fila 1 menys la 2, ens quedarà un 0. Per tant, fem això:\n\n\\[\n\\begin{gather}\nF_2 \\Rightarrow F_2 - F_1 \\\\\\\\\n\\small\n\\left(\\begin{array}{ccc|c}\n1 & 3 & 6 & 200 \\\\\n\\end{array}\\right)\n-\n\\small\n\\left(\\begin{array}{ccc|c}\n1 & 2 & 3 & 135 \\\\\n\\end{array}\\right)\n=\n\\small\n\\left(\\begin{array}{ccc|c}\n0 & 1 & 3 & 65 \\\\\n\\end{array}\\right)\n\\\\\\\\\n\\left(\\begin{array}{ccc|c}\n1 & 3 & 6 & 200 \\\\\n0 & 1 & 3 & 65 \\\\\n1 & 1 & 1 & 85\n\\end{array}\\right)\n\\end{gather}\n\\]"
+  },
+  {
+    "objectID": "contents/sistemes.html#resolució-pas-3",
+    "href": "contents/sistemes.html#resolució-pas-3",
+    "title": "Sistemes d’equacions",
+    "section": "Resolució: Pas 3",
+    "text": "Resolució: Pas 3\nAra podem fer el mateix per a la fila 3:\n\n\\[\n\\begin{gather}\nF_2 \\Rightarrow F_2 - F_1 \\\\\\\\\n\\small\n\\left(\\begin{array}{ccc|c}\n1 & 3 & 6 & 200 \\\\\n\\end{array}\\right)\n-\n\\small\n\\left(\\begin{array}{ccc|c}\n1 & 1 & 1 & 85 \\\\\n\\end{array}\\right)\n=\n\\small\n\\left(\\begin{array}{ccc|c}\n0 & 2 & 5 & 115 \\\\\n\\end{array}\\right)\n\\\\\\\\\n\\left(\\begin{array}{ccc|c}\n1 & 3 & 6 & 200 \\\\\n0 & 1 & 3 & 65 \\\\\n0 & 2 & 5 & 115\n\\end{array}\\right)\n\\end{gather}\n\\]"
+  },
+  {
+    "objectID": "contents/sistemes.html#resolució-pas-4",
+    "href": "contents/sistemes.html#resolució-pas-4",
+    "title": "Sistemes d’equacions",
+    "section": "Resolució: Pas 4",
+    "text": "Resolució: Pas 4\nAra, hem de fer el tercer 0. Per aquest es important que només es facin servir la fila 2 i 3, per no desfer el 0.\n\n\\[\n\\begin{gather}\nF_2 \\Rightarrow F_2 - F_1 \\\\\\\\\n\\small\n\\left(\\begin{array}{ccc|c}\n0 & 2 & 5 & 115 \\\\\n\\end{array}\\right)\n- 2 \\cdot\n\\small\n\\left(\\begin{array}{ccc|c}\n0 & 1 & 3 & 65 \\\\\n\\end{array}\\right)\n=\n\\small\n\\left(\\begin{array}{ccc|c}\n0 & 0 & -1 & -15 \\\\\n\\end{array}\\right)\n\\\\\\\\\n\\left(\\begin{array}{ccc|c}\n1 & 3 & 6 & 200 \\\\\n0 & 1 & 3 & 65 \\\\\n0 & 0 & -1 & -15\n\\end{array}\\right)\n\\end{gather}\n\\]"
+  },
+  {
+    "objectID": "contents/sistemes.html#resolució-pas-5",
+    "href": "contents/sistemes.html#resolució-pas-5",
+    "title": "Sistemes d’equacions",
+    "section": "Resolució: Pas 5",
+    "text": "Resolució: Pas 5\nAra tornem a passar la matriu a equacions:\n\n\\[\n\\begin{cases}\nx + 3y + 6z = 200\\\\\n\\quad\\quad~ y + 3z = 65\\\\\n\\quad\\quad\\quad~ -z = -15\n\\end{cases}\n\\]\nI les anem resolent de baix a dalt."
+  },
+  {
+    "objectID": "contents/sistemes.html#resolució-pas-6",
+    "href": "contents/sistemes.html#resolució-pas-6",
+    "title": "Sistemes d’equacions",
+    "section": "Resolució: Pas 6",
+    "text": "Resolució: Pas 6\n\\[\n\\begin{gather}\n-z = -15 \\\\ \\boxed{z = 15}\\\\\\\\\ny+3z = 65 \\\\ y + 3\\cdot 15 = 65 \\\\ y = 65-45\\\\ \\boxed{y = 20} \\\\\\\\\nx + 3y + 6z = 200\\\\ x+3\\cdot 20 + 6\\cdot 15 = 200\\\\ x + 60 + 90 = 200\\\\ x + 150 = 200 \\\\ x = 200 - 150 \\\\ \\boxed{x = 50}\n\\end{gather}\n\\]"
+  },
+  {
+    "objectID": "contents/sistemes.html#problemes-de-sistemes",
+    "href": "contents/sistemes.html#problemes-de-sistemes",
+    "title": "Sistemes d’equacions",
+    "section": "Problemes de sistemes",
+    "text": "Problemes de sistemes\nPodeu trobar els problemes de sistemes d’equacions en aquest enllaç:\nSistemes d’equacions"
+  }
+]
