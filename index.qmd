@@ -1,0 +1,20 @@
+---
+title: "MatesCCSS"
+listing:
+    sort-ui: false
+    sort: date desc
+    filter-ui: false
+    type: table
+    date-format: "YYYY-MM-DD"
+    contents: "contents"
+    field-display-names:
+        title: "Tema"
+        date: "Data"
+        author: "Autor"
+    table-hover: true
+    table-striped: true
+---
+
+Aquesta pàgina web conté apunts de Matemàtiques Aplicades a les Ciències Socials.
+
+Podeu trobar exàmens resolts [aquí](https://examenselectivitat.cat/selectivitat/Matem%C3%A0tiques%20CC.SS.).

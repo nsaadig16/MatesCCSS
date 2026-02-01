@@ -1,0 +1,268 @@
+---
+title: "Sistemes d'equacions"
+date: "2026-01-27"
+date-format: "YYYY-MM-DD"
+author: Naïm Saadi
+number-sections: false
+format: 
+    revealjs: 
+        fig-cap-location: top
+        transition: fade
+        pdf-separate-fragments: false
+        history: false
+---
+
+## Què és un sistema d'equacions?
+
+. . . 
+
+Un sistema d'equacions es un conjunt d'equacions que tenen més d'una **incògnita** pels que hem de fer servir certs **mètodes** per resoldre. Aquests mètodes poden ser un dels següents:
+
+- Substitució
+- Igualació
+- Reducció
+
+## Quan es pot resoldre un sistema?{.smaller}
+
+. . .
+
+Un sistema d'equacions es pot resoldre (és a dir, trobar les solucions a totes les 
+incògnites) només si tenim **el mateix nombre d'equacions que d'incògnites**.
+
+. . .
+
+*No* es poden resoldre:
+
+::::{.columns}
+
+:::{.column width=50%}
+$$
+\begin{cases}
+x + y + z = 3\\
+x - y - z = -1
+\end{cases}
+$$
+:::
+:::{.column width=50%}
+$$
+\begin{cases}
+x + y \quad~~~ = 3\\
+\quad ~~~ y - z = 1
+\end{cases}
+$$
+:::
+::::
+
+. . .
+
+*Sí* es poden resoldre:
+
+::::{.columns}
+:::{.column width=50%}
+$$
+\begin{cases}
+x + y + z = 3\\
+x - y - z = -1\\
+2x + y +3z = 6
+\end{cases}
+$$
+
+:::
+:::{.column width=50%}
+$$
+\begin{cases}
+x + y = 3\\
+x - y = -1
+\end{cases}
+$$
+:::
+::::
+
+## Resolució de sistemes amb tres incògnites
+
+. . .
+
+Per a resoldre sistemes amb tres incògnites normalment farem servir el mètode de Gauss per aplicar reducció.
+
+Es poden fer les següents operacions sobre files:
+
+::: {.incremental}
+- Intercanviar files (p.e. $\small F_1 \iff F_2$)
+- Multiplicar una fila per un número diferent de 0 (p.e. $\small F_1 \Rightarrow 3\cdot F_1$)
+- Sumar/restar files (p.e. $\small F_1 \Rightarrow F_1 + F_2$)
+- Multiplicar **i** sumar/restar files (p.e. $\small F_1 \Rightarrow 2\cdot F_1 -4\cdot F_2$)
+:::
+
+## Resolució 
+
+. . .
+
+Es farà un exemple amb el següent sistema:
+
+$$
+\begin{cases}
+x + 3y + 6z = 200\\
+x + 2y + 3z = 135\\
+x + y + z = 85
+\end{cases}
+$$
+
+. . .
+
+És el sistema extret de l'exercici 1 de l'examen de juny 2022, sèrie 2 ([veure problema](https://examenselectivitat.cat/selectivitat/Matem%C3%A0tiques%20CC.SS./per-temes/sistemes-d-equacions-i-resolucio-de-problemes?problem=6839)).
+
+## Resolució: Pas 1
+
+. . .
+
+Primerament, transformarem el sistema en una matriu:
+
+$$
+\left(\begin{array}{ccc|c}
+1 & 3 & 6 & 200 \\
+1 & 2 & 3 & 135 \\
+1 & 1 & 1 & 85 
+\end{array}\right)
+$$
+
+. . .
+
+On sempre hem de convertir les següents posicions en zeros:
+
+$$
+\left(\begin{array}{ccc|c}
+1 & 3 & 6 & 200 \\
+\color{blue}1 & 2 & 3 & 135 \\
+\color{blue}1 & \color{blue}1 & 1 & 85 
+\end{array}\right)
+$$
+
+## Resolució: Pas 2
+
+Podem veure que si a la fila 2 li col·loquem la resta de la fila 1 menys la 2, ens quedarà un 0. Per tant, fem això:
+
+. . .
+
+$$
+\begin{gather}
+F_2 \Rightarrow F_2 - F_1 \\\\
+\small
+\left(\begin{array}{ccc|c}
+1 & 3 & 6 & 200 \\
+\end{array}\right)
+-
+\small
+\left(\begin{array}{ccc|c}
+1 & 2 & 3 & 135 \\
+\end{array}\right)
+=
+\small
+\left(\begin{array}{ccc|c}
+0 & 1 & 3 & 65 \\
+\end{array}\right)
+\\\\
+\left(\begin{array}{ccc|c}
+1 & 3 & 6 & 200 \\
+0 & 1 & 3 & 65 \\
+1 & 1 & 1 & 85 
+\end{array}\right)
+\end{gather}
+$$
+
+## Resolució: Pas 3
+
+Ara podem fer el mateix per a la fila 3:
+
+. . .
+
+$$
+\begin{gather}
+F_2 \Rightarrow F_2 - F_1 \\\\
+\small
+\left(\begin{array}{ccc|c}
+1 & 3 & 6 & 200 \\
+\end{array}\right)
+-
+\small
+\left(\begin{array}{ccc|c}
+1 & 1 & 1 & 85 \\
+\end{array}\right)
+=
+\small
+\left(\begin{array}{ccc|c}
+0 & 2 & 5 & 115 \\
+\end{array}\right)
+\\\\
+\left(\begin{array}{ccc|c}
+1 & 3 & 6 & 200 \\
+0 & 1 & 3 & 65 \\
+0 & 2 & 5 & 115
+\end{array}\right)
+\end{gather}
+$$
+
+## Resolució: Pas 4
+
+Ara, hem de fer el tercer 0. Per aquest es important que només es facin servir la fila 2 i 3, per no desfer el 0. 
+
+. . .
+
+$$
+\begin{gather}
+F_2 \Rightarrow F_2 - F_1 \\\\
+\small
+\left(\begin{array}{ccc|c}
+0 & 2 & 5 & 115 \\
+\end{array}\right)
+- 2 \cdot
+\small
+\left(\begin{array}{ccc|c}
+0 & 1 & 3 & 65 \\
+\end{array}\right)
+=
+\small
+\left(\begin{array}{ccc|c}
+0 & 0 & -1 & -15 \\
+\end{array}\right)
+\\\\
+\left(\begin{array}{ccc|c}
+1 & 3 & 6 & 200 \\
+0 & 1 & 3 & 65 \\
+0 & 0 & -1 & -15
+\end{array}\right)
+\end{gather}
+$$
+
+## Resolució: Pas 5
+
+Ara tornem a passar la matriu a equacions:
+
+. . .
+
+$$
+\begin{cases}
+x + 3y + 6z = 200\\
+\quad\quad~ y + 3z = 65\\
+\quad\quad\quad~ -z = -15
+\end{cases}
+$$
+
+I les anem resolent de baix a dalt.
+
+## Resolució: Pas 6 {.smaller}
+
+$$
+\begin{gather}
+-z = -15 \\ \boxed{z = 15}\\\\
+y+3z = 65 \\ y + 3\cdot 15 = 65 \\ y = 65-45\\ \boxed{y = 20} \\\\
+x + 3y + 6z = 200\\ x+3\cdot 20 + 6\cdot 15 = 200\\ x + 60 + 90 = 200\\ x + 150 = 200 \\ x = 200 - 150 \\ \boxed{x = 50}
+\end{gather}
+$$
+
+## Problemes de sistemes
+
+Podeu trobar els problemes de sistemes d'equacions en aquest enllaç: 
+
+[Sistemes d'equacions](https://examenselectivitat.cat/selectivitat/Matem%C3%A0tiques%20CC.SS./per-temes/sistemes-d-equacions-i-resolucio-de-problemes)
+
+# Fi
