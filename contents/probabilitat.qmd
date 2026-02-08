@@ -1,0 +1,170 @@
+---
+title: "Probabilitat bayesiana"
+date: "2026-02-07"
+date-format: "YYYY-MM-DD"
+author: Naïm Saadi
+number-sections: false
+format: 
+    revealjs: 
+        fig-cap-location: top
+        transition: fade
+        pdf-separate-fragments: false
+        history: false
+---
+
+## Esdeveniments
+
+En probabilitat treballem amb **esdeveniments**, que són successos que poden o no poden ocórrer. 
+
+Si definim l'esdeveniment "*Una persona parla anglès*" amb la lletra $A$,
+llavors definim $P(A)$ com la **probabilitat** de que passi l'esdeveniment $A$. 
+
+La probabilitat sempre és un valor entre 0 i 1.
+
+## Probabilitat de Laplace
+
+Podem calcular la probabilitat d'un esdeveniment $A$ de la següent manera:
+
+$P(A)= \frac{\text{nº de casos favorables}}{\text{nº de casos possibles}}$
+
+On els casos **favorables** són aquells en el que passa l'esdeveniment $A$ i els **possibles** són tots els que podem considerar.
+
+*Exemple (Probabilitat de treure un nombre parell en un dau):* 
+*En un dau poden sortir 6 nombres diferents (casos **possibles**), i 3 d'aquests són parells (casos **favorables**).*
+*Per tant, la probabilitat és de $\tfrac{3}{6}$*.
+
+## Operacions amb esdeveniments
+
+Podem observar les següents operacions amb esdeveniments:
+
+:::{.incremental}
+
+- Negació ($\bar{A}$)
+- Unió ($A \cup B$)
+- Intersecció ($A \cap B$)
+
+:::
+
+. . .
+
+**Negació**
+
+Donat un probabilitat, definim la *negació* com a la probabilitat de que **no** passi l'esdeveniment, i es calcula així:
+
+$$
+P(\bar{A}) = 1 - P(A)
+$$
+
+## Operacions amb esdeveniments
+
+**Intersecció**
+
+Donades dues probabilitats, definim la *intersecció* com a la probabilitat de que succeeixin les dos probabilitats alhora. 
+
+És l'equivalent a la conjunció "*i*" (probabilitat de que passi $A$ *i* $B$). 
+
+Podem calcular la intersecció de la següent manera sempre que els dos esdeveniments siguin **independents** ^[**Esdeveniments independents:** Aquells esdeveniments en els que quan un passa, no afecta a que l'altre passi.].
+
+$$
+\small
+P(A \cap B) = P(A) \cdot P(B)
+$$
+
+## Operacions amb esdeveniments
+
+**Unió**
+
+Donades dues probabilitats, definim la *unió* com a la probabilitat de que succeeixi qualsevol de les dues probabilitats o les dues alhora. 
+
+És l'equivalent a la conjunció "*o*" (probabilitat de que passi $A$ *o* $B$). 
+
+Podem calcular la unió de la següent manera:
+
+$$
+P(A \cup B) = P(A) + P(B) - P(A\cap B)
+$$
+
+## Probabilitat condicionada
+
+Fem servir la **probabilitat condicionada** quan volem trobar la probabilitat de que passi un esdeveniment $A$ si **ja sabem** que ha passat l'esdeveniment $B$. Ho calculem de la següent forma:
+
+$$
+P(A|B) = \frac{P(A\cap B)}{P(B)}
+$$
+
+## Diagrama d'arbre
+
+Hi ha certs problemes en els que fer servir un diagrama d'arbre ens pot ajudar. Fem servir aquest enunciat com a exemple:
+
+::: {.callout-note icon="false"}
+
+## Enunciat
+
+Llançem dues monedes seguides. Quina es la probabilitat de que surtin dues cares seguides?
+
+:::
+
+## Diagrama d'arbre
+
+```{mermaid}
+flowchart LR
+    start((" "))
+    start-->C1((C1))
+    start-->X1((X1))
+    C1-->C2a((C2))
+    C1-->X2a((X2))
+    X1-->C2b((C2))
+    X1-->X2b((X2))
+```
+
+On $\small C_i$ i $\small X_i$ signifiquen treure cara o creu a la moneda $i$, respectivament. Podem colocar les probabilitats de la següent manera:
+
+## Diagrama d'arbre
+
+::::{.columns}
+
+::: {.column width="50%"}
+```{mermaid}
+flowchart LR
+    start((" "))
+    C1((C1))
+    X1((X1))
+    C2a((C2))
+    X2a((X2))
+    C2b((C2))
+    X2b((X2))
+    
+    start-->|"P(C1)"|C1
+    start-->|"P(X1)"|X1
+    C1-->|"P(C2|C1)"|C2a
+    C1-->|"P(X2|C1)"|X2a
+    X1-->|"P(C2|X1)"|C2b
+    X1-->|"P(X2|X1)"|X2b
+```
+:::
+::: {.column width="50%"}
+```{mermaid}
+flowchart LR
+    start((" "))
+    C1((C1))
+    X1((X1))
+    C2a((C2))
+    X2a((X2))
+    C2b((C2))
+    X2b((X2))
+    
+    start==>|"P(C1 ∩ C2)"|C2a
+    start-->|"P(C1)"|C1
+    start==>|"P(C1 ∩ X2)"|X2a
+    start==>|"P(X1 ∩ C2)"|C2b
+    start-->|"P(X1)"|X1
+    start==>|"P(X1 ∩ X2)"|X2b
+    C1-->|"P(C2|C1)"|C2a
+    C1-->|"P(X2|C1)"|X2a
+    X1-->|"P(C2|X1)"|C2b
+    X1-->|"P(X2|X1)"|X2b
+```
+:::
+::::
+
+# Fi
