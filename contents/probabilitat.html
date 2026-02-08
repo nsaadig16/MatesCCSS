@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Naïm Saadi">
-  <meta name="dcterms.date" content="2026-01-27">
-  <title>MatesCCSS – Sistemes d’equacions</title>
+  <meta name="dcterms.date" content="2026-02-07">
+  <title>MatesCCSS – Probabilitat bayesiana</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -123,13 +123,16 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Sistemes d’equacions</h1>
+  <h1 class="title">Probabilitat bayesiana</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -139,243 +142,172 @@ Naïm Saadi
 </div>
 </div>
 
-  <p class="date">2026-01-27</p>
+  <p class="date">2026-02-07</p>
 </section>
-<section id="què-és-un-sistema-dequacions" class="slide level2">
-<h2>Què és un sistema d’equacions?</h2>
-<div class="fragment">
-<p>Un sistema d’equacions es un conjunt d’equacions que tenen més d’una <strong>incògnita</strong> pels que hem de fer servir certs <strong>mètodes</strong> per resoldre. Aquests mètodes poden ser un dels següents:</p>
+<section id="esdeveniments" class="slide level2">
+<h2>Esdeveniments</h2>
+<p>En probabilitat treballem amb <strong>esdeveniments</strong>, que són successos que poden o no poden ocórrer.</p>
+<p>Si definim l’esdeveniment “<em>Una persona parla anglès</em>” amb la lletra <span class="math inline">\(A\)</span>, llavors definim <span class="math inline">\(P(A)\)</span> com la <strong>probabilitat</strong> de que passi l’esdeveniment <span class="math inline">\(A\)</span>.</p>
+<p>La probabilitat sempre és un valor entre 0 i 1.</p>
+</section>
+<section id="probabilitat-de-laplace" class="slide level2">
+<h2>Probabilitat de Laplace</h2>
+<p>Podem calcular la probabilitat d’un esdeveniment <span class="math inline">\(A\)</span> de la següent manera:</p>
+<p><span class="math inline">\(P(A)= \frac{\text{nº de casos favorables}}{\text{nº de casos possibles}}\)</span></p>
+<p>On els casos <strong>favorables</strong> són aquells en el que passa l’esdeveniment <span class="math inline">\(A\)</span> i els <strong>possibles</strong> són tots els que podem considerar.</p>
+<p><em>Exemple (Probabilitat de treure un nombre parell en un dau):</em> <em>En un dau poden sortir 6 nombres diferents (casos <strong>possibles</strong>), i 3 d’aquests són parells (casos <strong>favorables</strong>).</em> <em>Per tant, la probabilitat és de <span class="math inline">\(\tfrac{3}{6}\)</span></em>.</p>
+</section>
+<section id="operacions-amb-esdeveniments" class="slide level2">
+<h2>Operacions amb esdeveniments</h2>
+<p>Podem observar les següents operacions amb esdeveniments:</p>
 <ul>
-<li>Substitució</li>
-<li>Igualació</li>
-<li>Reducció</li>
+<li class="fragment">Negació (<span class="math inline">\(\bar{A}\)</span>)</li>
+<li class="fragment">Unió (<span class="math inline">\(A \cup B\)</span>)</li>
+<li class="fragment">Intersecció (<span class="math inline">\(A \cap B\)</span>)</li>
 </ul>
+<div class="fragment">
+<p><strong>Negació</strong></p>
+<p>Donat un probabilitat, definim la <em>negació</em> com a la probabilitat de que <strong>no</strong> passi l’esdeveniment, i es calcula així:</p>
+<p><span class="math display">\[
+P(\bar{A}) = 1 - P(A)
+\]</span></p>
 </div>
 </section>
-<section id="quan-es-pot-resoldre-un-sistema" class="slide level2 smaller">
-<h2>Quan es pot resoldre un sistema?</h2>
-<div class="fragment">
-<p>Un sistema d’equacions es pot resoldre (és a dir, trobar les solucions a totes les incògnites) només si tenim <strong>el mateix nombre d’equacions que d’incògnites</strong>.</p>
+<section id="operacions-amb-esdeveniments-1" class="slide level2">
+<h2>Operacions amb esdeveniments</h2>
+<p><strong>Intersecció</strong></p>
+<p>Donades dues probabilitats, definim la <em>intersecció</em> com a la probabilitat de que succeeixin les dos probabilitats alhora.</p>
+<p>És l’equivalent a la conjunció “<em>i</em>” (probabilitat de que passi <span class="math inline">\(A\)</span> <em>i</em> <span class="math inline">\(B\)</span>).</p>
+<p>Podem calcular la intersecció de la següent manera sempre que els dos esdeveniments siguin <strong>independents</strong> <sup>1</sup>.</p>
+<p><span class="math display">\[
+\small
+P(A \cap B) = P(A) \cdot P(B)
+\]</span></p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p><strong>Esdeveniments independents:</strong> Aquells esdeveniments en els que quan un passa, no afecta a que l’altre passi.</p></li></ol></aside></section>
+<section id="operacions-amb-esdeveniments-2" class="slide level2">
+<h2>Operacions amb esdeveniments</h2>
+<p><strong>Unió</strong></p>
+<p>Donades dues probabilitats, definim la <em>unió</em> com a la probabilitat de que succeeixi qualsevol de les dues probabilitats o les dues alhora.</p>
+<p>És l’equivalent a la conjunció “<em>o</em>” (probabilitat de que passi <span class="math inline">\(A\)</span> <em>o</em> <span class="math inline">\(B\)</span>).</p>
+<p>Podem calcular la unió de la següent manera:</p>
+<p><span class="math display">\[
+P(A \cup B) = P(A) + P(B) - P(A\cap B)
+\]</span></p>
+</section>
+<section id="probabilitat-condicionada" class="slide level2">
+<h2>Probabilitat condicionada</h2>
+<p>Fem servir la <strong>probabilitat condicionada</strong> quan volem trobar la probabilitat de que passi un esdeveniment <span class="math inline">\(A\)</span> si <strong>ja sabem</strong> que ha passat l’esdeveniment <span class="math inline">\(B\)</span>. Ho calculem de la següent forma:</p>
+<p><span class="math display">\[
+P(A|B) = \frac{P(A\cap B)}{P(B)}
+\]</span></p>
+</section>
+<section id="diagrama-darbre" class="slide level2">
+<h2>Diagrama d’arbre</h2>
+<p>Hi ha certs problemes en els que fer servir un diagrama d’arbre ens pot ajudar. Fem servir aquest enunciat com a exemple:</p>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Enunciat</strong></p>
 </div>
-<div class="fragment">
-<p><em>No</em> es poden resoldre:</p>
+<div class="callout-content">
+<p>Llançem dues monedes seguides. Quina es la probabilitat de que surtin dues cares seguides?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="diagrama-darbre-1" class="slide level2">
+<h2>Diagrama d’arbre</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    start((" "))
+    start--&gt;C1((C1))
+    start--&gt;X1((X1))
+    C1--&gt;C2a((C2))
+    C1--&gt;X2a((X2))
+    X1--&gt;C2b((C2))
+    X1--&gt;X2b((X2))
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>On <span class="math inline">\(\small C_i\)</span> i <span class="math inline">\(\small X_i\)</span> signifiquen treure cara o creu a la moneda <span class="math inline">\(i\)</span>, respectivament. Podem colocar les probabilitats de la següent manera:</p>
+</section>
+<section id="diagrama-darbre-2" class="slide level2">
+<h2>Diagrama d’arbre</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><span class="math display">\[
-\begin{cases}
-x + y + z = 3\\
-x - y - z = -1
-\end{cases}
-\]</span></p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    start((" "))
+    C1((C1))
+    X1((X1))
+    C2a((C2))
+    X2a((X2))
+    C2b((C2))
+    X2b((X2))
+    
+    start--&gt;|"P(C1)"|C1
+    start--&gt;|"P(X1)"|X1
+    C1--&gt;|"P(C2|C1)"|C2a
+    C1--&gt;|"P(X2|C1)"|X2a
+    X1--&gt;|"P(C2|X1)"|C2b
+    X1--&gt;|"P(X2|X1)"|X2b
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 </div><div class="column" style="width:50%;">
-<p><span class="math display">\[
-\begin{cases}
-x + y \quad~~~ = 3\\
-\quad ~~~ y - z = 1
-\end{cases}
-\]</span></p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    start((" "))
+    C1((C1))
+    X1((X1))
+    C2a((C2))
+    X2a((X2))
+    C2b((C2))
+    X2b((X2))
+    
+    start==&gt;|"P(C1 ∩ C2)"|C2a
+    start--&gt;|"P(C1)"|C1
+    start==&gt;|"P(C1 ∩ X2)"|X2a
+    start==&gt;|"P(X1 ∩ C2)"|C2b
+    start--&gt;|"P(X1)"|X1
+    start==&gt;|"P(X1 ∩ X2)"|X2b
+    C1--&gt;|"P(C2|C1)"|C2a
+    C1--&gt;|"P(X2|C1)"|X2a
+    X1--&gt;|"P(C2|X1)"|C2b
+    X1--&gt;|"P(X2|X1)"|X2b
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 </div></div>
-</div>
-<div class="fragment">
-<p><em>Sí</em> es poden resoldre:</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><span class="math display">\[
-\begin{cases}
-x + y + z = 3\\
-x - y - z = -1\\
-2x + y +3z = 6
-\end{cases}
-\]</span></p>
-</div><div class="column" style="width:50%;">
-<p><span class="math display">\[
-\begin{cases}
-x + y = 3\\
-x - y = -1
-\end{cases}
-\]</span></p>
-</div></div>
-</div>
-</section>
-<section id="resolució-de-sistemes-amb-tres-incògnites" class="slide level2">
-<h2>Resolució de sistemes amb tres incògnites</h2>
-<div class="fragment">
-<p>Per a resoldre sistemes amb tres incògnites normalment farem servir el mètode de Gauss per aplicar reducció.</p>
-<p>Es poden fer les següents operacions sobre files:</p>
-<ul>
-<li class="fragment">Intercanviar files (p.e. <span class="math inline">\(\small F_1 \iff F_2\)</span>)</li>
-<li class="fragment">Multiplicar una fila per un número diferent de 0 (p.e. <span class="math inline">\(\small F_1 \Rightarrow 3\cdot F_1\)</span>)</li>
-<li class="fragment">Sumar/restar files (p.e. <span class="math inline">\(\small F_1 \Rightarrow F_1 + F_2\)</span>)</li>
-<li class="fragment">Multiplicar <strong>i</strong> sumar/restar files (p.e. <span class="math inline">\(\small F_1 \Rightarrow 2\cdot F_1 -4\cdot F_2\)</span>)</li>
-</ul>
-</div>
-</section>
-<section id="resolució" class="slide level2">
-<h2>Resolució</h2>
-<div class="fragment">
-<p>Es farà un exemple amb el següent sistema:</p>
-<p><span class="math display">\[
-\begin{cases}
-x + 3y + 6z = 200\\
-x + 2y + 3z = 135\\
-x + y + z = 85
-\end{cases}
-\]</span></p>
-</div>
-<div class="fragment">
-<p>És el sistema extret de l’exercici 1 de l’examen de juny 2022, sèrie 2 (<a href="https://examenselectivitat.cat/selectivitat/Matem%C3%A0tiques%20CC.SS./per-temes/sistemes-d-equacions-i-resolucio-de-problemes?problem=6839">veure problema</a>).</p>
-</div>
-</section>
-<section id="resolució-pas-1" class="slide level2">
-<h2>Resolució: Pas 1</h2>
-<div class="fragment">
-<p>Primerament, transformarem el sistema en una matriu:</p>
-<p><span class="math display">\[
-\left(\begin{array}{ccc|c}
-1 &amp; 3 &amp; 6 &amp; 200 \\
-1 &amp; 2 &amp; 3 &amp; 135 \\
-1 &amp; 1 &amp; 1 &amp; 85
-\end{array}\right)
-\]</span></p>
-</div>
-<div class="fragment">
-<p>On sempre hem de convertir les següents posicions en zeros:</p>
-<p><span class="math display">\[
-\left(\begin{array}{ccc|c}
-1 &amp; 3 &amp; 6 &amp; 200 \\
-\color{blue}1 &amp; 2 &amp; 3 &amp; 135 \\
-\color{blue}1 &amp; \color{blue}1 &amp; 1 &amp; 85
-\end{array}\right)
-\]</span></p>
-</div>
-</section>
-<section id="resolució-pas-2" class="slide level2">
-<h2>Resolució: Pas 2</h2>
-<p>Podem veure que si a la fila 2 li col·loquem la resta de la fila 1 menys la 2, ens quedarà un 0. Per tant, fem això:</p>
-<div class="fragment">
-<p><span class="math display">\[
-\begin{gather}
-F_2 \Rightarrow F_2 - F_1 \\\\
-\small
-\left(\begin{array}{ccc|c}
-1 &amp; 3 &amp; 6 &amp; 200 \\
-\end{array}\right)
--
-\small
-\left(\begin{array}{ccc|c}
-1 &amp; 2 &amp; 3 &amp; 135 \\
-\end{array}\right)
-=
-\small
-\left(\begin{array}{ccc|c}
-0 &amp; 1 &amp; 3 &amp; 65 \\
-\end{array}\right)
-\\\\
-\left(\begin{array}{ccc|c}
-1 &amp; 3 &amp; 6 &amp; 200 \\
-0 &amp; 1 &amp; 3 &amp; 65 \\
-1 &amp; 1 &amp; 1 &amp; 85
-\end{array}\right)
-\end{gather}
-\]</span></p>
-</div>
-</section>
-<section id="resolució-pas-3" class="slide level2">
-<h2>Resolució: Pas 3</h2>
-<p>Ara podem fer el mateix per a la fila 3:</p>
-<div class="fragment">
-<p><span class="math display">\[
-\begin{gather}
-F_2 \Rightarrow F_2 - F_1 \\\\
-\small
-\left(\begin{array}{ccc|c}
-1 &amp; 3 &amp; 6 &amp; 200 \\
-\end{array}\right)
--
-\small
-\left(\begin{array}{ccc|c}
-1 &amp; 1 &amp; 1 &amp; 85 \\
-\end{array}\right)
-=
-\small
-\left(\begin{array}{ccc|c}
-0 &amp; 2 &amp; 5 &amp; 115 \\
-\end{array}\right)
-\\\\
-\left(\begin{array}{ccc|c}
-1 &amp; 3 &amp; 6 &amp; 200 \\
-0 &amp; 1 &amp; 3 &amp; 65 \\
-0 &amp; 2 &amp; 5 &amp; 115
-\end{array}\right)
-\end{gather}
-\]</span></p>
-</div>
-</section>
-<section id="resolució-pas-4" class="slide level2">
-<h2>Resolució: Pas 4</h2>
-<p>Ara, hem de fer el tercer 0. Per aquest es important que només es facin servir la fila 2 i 3, per no desfer el 0.</p>
-<div class="fragment">
-<p><span class="math display">\[
-\begin{gather}
-F_2 \Rightarrow F_2 - F_1 \\\\
-\small
-\left(\begin{array}{ccc|c}
-0 &amp; 2 &amp; 5 &amp; 115 \\
-\end{array}\right)
-- 2 \cdot
-\small
-\left(\begin{array}{ccc|c}
-0 &amp; 1 &amp; 3 &amp; 65 \\
-\end{array}\right)
-=
-\small
-\left(\begin{array}{ccc|c}
-0 &amp; 0 &amp; -1 &amp; -15 \\
-\end{array}\right)
-\\\\
-\left(\begin{array}{ccc|c}
-1 &amp; 3 &amp; 6 &amp; 200 \\
-0 &amp; 1 &amp; 3 &amp; 65 \\
-0 &amp; 0 &amp; -1 &amp; -15
-\end{array}\right)
-\end{gather}
-\]</span></p>
-</div>
-</section>
-<section id="resolució-pas-5" class="slide level2">
-<h2>Resolució: Pas 5</h2>
-<p>Ara tornem a passar la matriu a equacions:</p>
-<div class="fragment">
-<p><span class="math display">\[
-\begin{cases}
-x + 3y + 6z = 200\\
-\quad\quad~ y + 3z = 65\\
-\quad\quad\quad~ -z = -15
-\end{cases}
-\]</span></p>
-<p>I les anem resolent de baix a dalt.</p>
-</div>
-</section>
-<section id="resolució-pas-6" class="slide level2 smaller">
-<h2>Resolució: Pas 6</h2>
-<p><span class="math display">\[
-\begin{gather}
--z = -15 \\ \boxed{z = 15}\\\\
-y+3z = 65 \\ y + 3\cdot 15 = 65 \\ y = 65-45\\ \boxed{y = 20} \\\\
-x + 3y + 6z = 200\\ x+3\cdot 20 + 6\cdot 15 = 200\\ x + 60 + 90 = 200\\ x + 150 = 200 \\ x = 200 - 150 \\ \boxed{x = 50}
-\end{gather}
-\]</span></p>
-</section>
-<section id="problemes-de-sistemes" class="slide level2">
-<h2>Problemes de sistemes</h2>
-<p>Podeu trobar els problemes de sistemes d’equacions en aquest enllaç:</p>
-<p><a href="https://examenselectivitat.cat/selectivitat/Matem%C3%A0tiques%20CC.SS./per-temes/sistemes-d-equacions-i-resolucio-de-problemes">Sistemes d’equacions</a></p>
 </section>
 <section id="fi" class="title-slide slide level1 center">
 <h1>Fi</h1>
 
 
 </section>
+
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
