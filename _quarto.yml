@@ -15,7 +15,10 @@ website:
         text: Inici
       - href: contents/sistemes.qmd
         text: Sistemes d'equacions
-
+      - text: Probabilitat
+        menu:
+          - href: probabilitat_bayesiana.qmd
+            text: Probabilitat bayesiana
 format:
   html:
     theme:
