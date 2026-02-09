@@ -84,64 +84,64 @@
     "text": "Problemes de sistemes\nPodeu trobar els problemes de sistemes d’equacions en aquest enllaç:\nSistemes d’equacions"
   },
   {
-    "objectID": "contents/probabilitat.html#esdeveniments",
-    "href": "contents/probabilitat.html#esdeveniments",
+    "objectID": "contents/probabilitat_bayesiana.html#esdeveniments",
+    "href": "contents/probabilitat_bayesiana.html#esdeveniments",
     "title": "Probabilitat bayesiana",
     "section": "Esdeveniments",
     "text": "Esdeveniments\nEn probabilitat treballem amb esdeveniments, que són successos que poden o no poden ocórrer.\nSi definim l’esdeveniment “Una persona parla anglès” amb la lletra \\(A\\), llavors definim \\(P(A)\\) com la probabilitat de que passi l’esdeveniment \\(A\\).\nLa probabilitat sempre és un valor entre 0 i 1."
   },
   {
-    "objectID": "contents/probabilitat.html#probabilitat-de-laplace",
-    "href": "contents/probabilitat.html#probabilitat-de-laplace",
+    "objectID": "contents/probabilitat_bayesiana.html#probabilitat-de-laplace",
+    "href": "contents/probabilitat_bayesiana.html#probabilitat-de-laplace",
     "title": "Probabilitat bayesiana",
     "section": "Probabilitat de Laplace",
     "text": "Probabilitat de Laplace\nPodem calcular la probabilitat d’un esdeveniment \\(A\\) de la següent manera:\n\\(P(A)= \\frac{\\text{nº de casos favorables}}{\\text{nº de casos possibles}}\\)\nOn els casos favorables són aquells en el que passa l’esdeveniment \\(A\\) i els possibles són tots els que podem considerar.\nExemple (Probabilitat de treure un nombre parell en un dau): En un dau poden sortir 6 nombres diferents (casos possibles), i 3 d’aquests són parells (casos favorables). Per tant, la probabilitat és de \\(\\tfrac{3}{6}\\)."
   },
   {
-    "objectID": "contents/probabilitat.html#operacions-amb-esdeveniments",
-    "href": "contents/probabilitat.html#operacions-amb-esdeveniments",
+    "objectID": "contents/probabilitat_bayesiana.html#operacions-amb-esdeveniments",
+    "href": "contents/probabilitat_bayesiana.html#operacions-amb-esdeveniments",
     "title": "Probabilitat bayesiana",
     "section": "Operacions amb esdeveniments",
     "text": "Operacions amb esdeveniments\nPodem observar les següents operacions amb esdeveniments:\n\nNegació (\\(\\bar{A}\\))\nUnió (\\(A \\cup B\\))\nIntersecció (\\(A \\cap B\\))\n\n\nNegació\nDonat un probabilitat, definim la negació com a la probabilitat de que no passi l’esdeveniment, i es calcula així:\n\\[\nP(\\bar{A}) = 1 - P(A)\n\\]"
   },
   {
-    "objectID": "contents/probabilitat.html#operacions-amb-esdeveniments-1",
-    "href": "contents/probabilitat.html#operacions-amb-esdeveniments-1",
+    "objectID": "contents/probabilitat_bayesiana.html#operacions-amb-esdeveniments-1",
+    "href": "contents/probabilitat_bayesiana.html#operacions-amb-esdeveniments-1",
     "title": "Probabilitat bayesiana",
     "section": "Operacions amb esdeveniments",
     "text": "Operacions amb esdeveniments\nIntersecció\nDonades dues probabilitats, definim la intersecció com a la probabilitat de que succeeixin les dos probabilitats alhora.\nÉs l’equivalent a la conjunció “i” (probabilitat de que passi \\(A\\) i \\(B\\)).\nPodem calcular la intersecció de la següent manera sempre que els dos esdeveniments siguin independents 1.\n\\[\n\\small\nP(A \\cap B) = P(A) \\cdot P(B)\n\\]\nEsdeveniments independents: Aquells esdeveniments en els que quan un passa, no afecta a que l’altre passi."
   },
   {
-    "objectID": "contents/probabilitat.html#operacions-amb-esdeveniments-2",
-    "href": "contents/probabilitat.html#operacions-amb-esdeveniments-2",
+    "objectID": "contents/probabilitat_bayesiana.html#operacions-amb-esdeveniments-2",
+    "href": "contents/probabilitat_bayesiana.html#operacions-amb-esdeveniments-2",
     "title": "Probabilitat bayesiana",
     "section": "Operacions amb esdeveniments",
     "text": "Operacions amb esdeveniments\nUnió\nDonades dues probabilitats, definim la unió com a la probabilitat de que succeeixi qualsevol de les dues probabilitats o les dues alhora.\nÉs l’equivalent a la conjunció “o” (probabilitat de que passi \\(A\\) o \\(B\\)).\nPodem calcular la unió de la següent manera:\n\\[\nP(A \\cup B) = P(A) + P(B) - P(A\\cap B)\n\\]"
   },
   {
-    "objectID": "contents/probabilitat.html#probabilitat-condicionada",
-    "href": "contents/probabilitat.html#probabilitat-condicionada",
+    "objectID": "contents/probabilitat_bayesiana.html#probabilitat-condicionada",
+    "href": "contents/probabilitat_bayesiana.html#probabilitat-condicionada",
     "title": "Probabilitat bayesiana",
     "section": "Probabilitat condicionada",
     "text": "Probabilitat condicionada\nFem servir la probabilitat condicionada quan volem trobar la probabilitat de que passi un esdeveniment \\(A\\) si ja sabem que ha passat l’esdeveniment \\(B\\). Ho calculem de la següent forma:\n\\[\nP(A|B) = \\frac{P(A\\cap B)}{P(B)}\n\\]"
   },
   {
-    "objectID": "contents/probabilitat.html#diagrama-darbre",
-    "href": "contents/probabilitat.html#diagrama-darbre",
+    "objectID": "contents/probabilitat_bayesiana.html#diagrama-darbre",
+    "href": "contents/probabilitat_bayesiana.html#diagrama-darbre",
     "title": "Probabilitat bayesiana",
     "section": "Diagrama d’arbre",
     "text": "Diagrama d’arbre\nHi ha certs problemes en els que fer servir un diagrama d’arbre ens pot ajudar. Fem servir aquest enunciat com a exemple:\n\n\n\nEnunciat\n\n\nLlançem dues monedes seguides. Quina es la probabilitat de que surtin dues cares seguides?"
   },
   {
-    "objectID": "contents/probabilitat.html#diagrama-darbre-1",
-    "href": "contents/probabilitat.html#diagrama-darbre-1",
+    "objectID": "contents/probabilitat_bayesiana.html#diagrama-darbre-1",
+    "href": "contents/probabilitat_bayesiana.html#diagrama-darbre-1",
     "title": "Probabilitat bayesiana",
     "section": "Diagrama d’arbre",
     "text": "Diagrama d’arbre\n\n\n\n\n\nflowchart LR\n    start((\" \"))\n    start--&gt;C1((C1))\n    start--&gt;X1((X1))\n    C1--&gt;C2a((C2))\n    C1--&gt;X2a((X2))\n    X1--&gt;C2b((C2))\n    X1--&gt;X2b((X2))\n\n\n\n\n\n\nOn \\(\\small C_i\\) i \\(\\small X_i\\) signifiquen treure cara o creu a la moneda \\(i\\), respectivament. Podem colocar les probabilitats de la següent manera:"
   },
   {
-    "objectID": "contents/probabilitat.html#diagrama-darbre-2",
-    "href": "contents/probabilitat.html#diagrama-darbre-2",
+    "objectID": "contents/probabilitat_bayesiana.html#diagrama-darbre-2",
+    "href": "contents/probabilitat_bayesiana.html#diagrama-darbre-2",
     "title": "Probabilitat bayesiana",
     "section": "Diagrama d’arbre",
     "text": "Diagrama d’arbre\n\n\n\n\n\n\n\nflowchart LR\n    start((\" \"))\n    C1((C1))\n    X1((X1))\n    C2a((C2))\n    X2a((X2))\n    C2b((C2))\n    X2b((X2))\n    \n    start--&gt;|\"P(C1)\"|C1\n    start--&gt;|\"P(X1)\"|X1\n    C1--&gt;|\"P(C2|C1)\"|C2a\n    C1--&gt;|\"P(X2|C1)\"|X2a\n    X1--&gt;|\"P(C2|X1)\"|C2b\n    X1--&gt;|\"P(X2|X1)\"|X2b\n\n\n\n\n\n\n\n\n\n\n\n\nflowchart LR\n    start((\" \"))\n    C1((C1))\n    X1((X1))\n    C2a((C2))\n    X2a((X2))\n    C2b((C2))\n    X2b((X2))\n    \n    start==&gt;|\"P(C1 ∩ C2)\"|C2a\n    start--&gt;|\"P(C1)\"|C1\n    start==&gt;|\"P(C1 ∩ X2)\"|X2a\n    start==&gt;|\"P(X1 ∩ C2)\"|C2b\n    start--&gt;|\"P(X1)\"|X1\n    start==&gt;|\"P(X1 ∩ X2)\"|X2b\n    C1--&gt;|\"P(C2|C1)\"|C2a\n    C1--&gt;|\"P(X2|C1)\"|X2a\n    X1--&gt;|\"P(C2|X1)\"|C2b\n    X1--&gt;|\"P(X2|X1)\"|X2b"
