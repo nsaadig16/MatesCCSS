@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/contents/probabilitat_binomial.html",
       "/contents/probabilitat_bayesiana.html",
       "/contents/sistemes.html"
     ]
