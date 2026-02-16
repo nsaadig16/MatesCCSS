@@ -1,0 +1,156 @@
+---
+title: "Probabilitat binomial"
+date: "2026-02-16"
+date-format: "YYYY-MM-DD"
+author: Naïm Saadi
+number-sections: false
+format: 
+    revealjs: 
+        fig-cap-location: top
+        transition: fade
+        pdf-separate-fragments: false
+        history: false
+---
+
+## Què és?
+
+La **probabilitat binomial** és aquella que fem servir quan tenim un esdeveniment en el que podem tindre **èxit** o **fracàs** i volem saber la probabilitat de tindre èxit un cert número de vegades.
+
+La podem dividir en la probabilitat binomial *simple* i *amb intervals*.
+
+## Probabilitat binomial simple
+
+Imaginem el següent enunciat:
+
+::: {.callout-note icon="false"}
+
+## Enunciat
+
+Llançem un dau 5 vegades seguides. Quina és la probabilitat de treure un 5 exactament tres vegades?
+
+:::
+
+Necessitem extreure **quatre** variables d'aquí:
+
+:::{.incremental}
+- $p$: Probabilitat d'èxit
+- $q$: Probabilitat de fracàs ($1-p$)
+- $n$: Nombre d'intents
+- $k$: Nombre d'intents exitosos desitjat
+:::
+
+## Probabilitats
+
+En llençar un dau, hi ha una entre sis probabilitats de treure el número cinc. Per tant,
+la probabilitat d'èxit és d'un sisè.
+
+$p = \tfrac{1}{6}$
+
+. . .
+
+Com estem en probabilitat binomial, i només podem tindre èxit o fracàs, sempre podem calcular la probabilitat de fracàs com la probabilitat de **no** tindre èxit.
+
+$q = 1 - p = 1 - \tfrac{1}{6} = \tfrac{5}{6}$
+
+## Intents i combinatòria
+
+És bastant clar que el nombre d'intents és 5, i els exitosos desitjats, 3.
+$n = 5;~~k=3$
+
+Però clar, podem tindre diverses formes de treure 3 cincs en 5 tirades (555XX,55X5X,5XX55,...).
+
+. . .
+
+Podem calcular el nombre de combinacions diferents fent servir el nombre combinatòri $\binom{n}{k}$.
+
+$\binom{5}{3} = 10$
+
+## Càlcul de la probabilitat
+
+Podem calcular la probabilitat fent servir la següent fòrmula:
+
+$$
+P(X = k) = \binom{n}{k}\cdot p^{k}\cdot q^{(n-k)}
+$$
+
+. . .
+
+Fent servir l'enunciat:
+
+$$
+P(X=3) = \binom{5}{3} \cdot \tfrac{1}{6}^3\cdot \tfrac{5}{6}^{(5-3)}= 0.0322
+$$
+
+## Probabilitat binomial amb intervals
+
+Imaginem ara que, en comptes de "treure un 5 tres vegades exactament", ens diuen "treure un 5 tres o més vegades".
+
+Això ho podem calcular fàcilment d'aquesta manera:
+
+$$
+P(X\geq 3)= P(X=3) + P(X=4) + P(X=5)
+$$
+
+. . .
+
+Però que fem si aquest nombre creix molt?
+
+## Intervals més grans{.smaller}
+
+Ara imaginem que tirem el dau 20 vegades en comptes de 5, i volem calcular la probabilitat de treure un 5 tres o més vegades.
+
+Si ho fem com abans, seria:
+
+$$
+P(X\geq 3) = P(X=3) + P(X=4) + \dots +P(X=20)
+$$
+
+. . .
+
+...que és molt llarg i molt costós. Però com estem a probabilitat binomial, en comptes de calcular la probabilitat de treure més de tres cincs podem calcular la de treure menys de tres vegades i restar-ho al total.
+
+$$ 
+P(X\geq k) = 1 - P(X \lt k)
+$$
+
+## Exemple amb intervals
+
+> Probabilitat de, tirant 20 daus, que surtin 3 o més vegades un 5.
+
+. . .
+
+$$
+\begin{gather}
+P(X\geq 3) = 1 - P(X\lt 3) = \\1 - [P(X=2) + P(X=1) + P(X=0)]=\\\small
+1-[\tbinom{20}{2}\cdot \tfrac{1}{6}^2\cdot \tfrac{5}{6}^{(20-2)} + \tbinom{20}{1}\cdot \tfrac{1}{6}^1\cdot \tfrac{5}{6}^{(20-1)} + \tbinom{20}{0}\cdot \tfrac{1}{6}^0\cdot \tfrac{5}{6}^{(20-0)}] 
+\end{gather}
+$$
+
+## Exercicis de prova{.smaller}
+
+> Una persona té 0.7 de probabilitats de respondre correctament una pregunta. Quina és la probabilitat, de que de 10 preguntes, respongui totes correctament?
+
+. . .
+
+$$
+n = 10\quad k = 10 \quad p = 0.7 \quad q = 0.3
+$$
+
+$$
+P(X=10)=\tbinom{10}{10}\cdot 0.7^{10} \cdot 0.3^0 = 0.0282
+$$
+
+. . .
+
+> Un jugador de bàsquet encerta 5 de cada 8 tirs a la canasta. Si en un partit llença 10 vegades, quina és la probabilitat d'encertar en 6 ocasions?
+
+. . .
+
+$$
+n = 10\quad k = 6 \quad p = \tfrac 5 8 \quad q = \tfrac 3 8
+$$
+
+
+$$
+P(X=6)=\tbinom{10}{6}\cdot \tfrac{5}{8}^{6} \cdot \tfrac{3}{8}^{(10-6)} = 0.2475
+$$
